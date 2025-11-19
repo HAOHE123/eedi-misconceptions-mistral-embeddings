@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+log_*/
+*.log
+model_save/  # If large; remove this line if you want to include small models
