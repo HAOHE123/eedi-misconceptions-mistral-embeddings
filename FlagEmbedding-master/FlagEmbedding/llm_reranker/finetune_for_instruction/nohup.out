@@ -1,0 +1,368 @@
+11/20/2024 09:57:51 - WARNING - __main__ -   Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, 16-bits training: False
+11/20/2024 09:57:51 - INFO - __main__ -   Training/evaluation parameters RetrieverTrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=True,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=no,
+evaluation_strategy=None,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=32,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0002,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=../../../../model_save/v3_round1_qlora_recall_top_100_for_rank_model/runs/Nov20_09-57-51_autodl-container-499541b7fe-5f1df067,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=1.0,
+logging_strategy=steps,
+loss_type=only logits,
+lr_scheduler_kwargs={},
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=2.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=../../../../model_save/v3_round1_qlora_recall_top_100_for_rank_model,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=1,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=['tensorboard'],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=../../../../model_save/v3_round1_qlora_recall_top_100_for_rank_model,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=500,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+11/20/2024 09:57:51 - INFO - __main__ -   Model parameters ModelArguments(model_name_or_path='/root/autodl-tmp/bert-models/upstage/SOLAR-10.7B-Instruct-v1.0', peft_model_path='', config_name=None, tokenizer_name=None, use_lora=True, lora_rank=64, lora_alpha=16, lora_dropout=0.1, target_modules=['q_proj', 'v_proj', 'o_proj', 'down_proj', 'up_proj', 'gate_proj'], save_merged_lora_model=False, use_flash_attn=True, use_slow_tokenizer=False, low_cpu_mem_usage=False, cache_dir='tmp', token=None, from_peft=None, lora_extra_parameters=None)
+11/20/2024 09:57:51 - INFO - __main__ -   Data parameters DataArguments(train_data='../../../../output/v3_round1_qlora_rank_top_50_train.jsonl', train_group_size=16, query_max_len=512, passage_max_len=512, max_example_num_per_dataset=100000000, query_instruction_for_retrieval='A: ', passage_instruction_for_retrieval='B: ', cache_path='./data_dir', load_from_disk=False, load_disk_path=None, save_to_disk=False, save_disk_path=None, num_shards=0, save_max_shard_size='50GB', exit_after_save=False)
+training_args.fp16 = False
+`low_cpu_mem_usage` was None, now set to True since model is quantized.
+The model was loaded with use_flash_attention_2=True, which is deprecated and may be removed in a future release. Please use `attn_implementation="flash_attention_2"` instead.
+Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/root/miniconda3/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/autodl-tmp/Eedi/01-SFR-Embedding-Mistral/FlagEmbedding-master/FlagEmbedding/llm_reranker/finetune_for_instruction/run.py", line 146, in <module>
+    main()
+  File "/root/autodl-tmp/Eedi/01-SFR-Embedding-Mistral/FlagEmbedding-master/FlagEmbedding/llm_reranker/finetune_for_instruction/run.py", line 60, in main
+    base_model = get_model(model_args, training_args)
+  File "/root/autodl-tmp/Eedi/01-SFR-Embedding-Mistral/FlagEmbedding-master/FlagEmbedding/llm_reranker/finetune_for_instruction/load_model.py", line 16, in get_model
+    model = AutoModelForCausalLM.from_pretrained(
+  File "/root/miniconda3/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+  File "/root/miniconda3/lib/python3.10/site-packages/transformers/modeling_utils.py", line 3704, in from_pretrained
+    config = cls._autoset_attn_implementation(
+  File "/root/miniconda3/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1481, in _autoset_attn_implementation
+    cls._check_and_enable_flash_attn_2(
+  File "/root/miniconda3/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1583, in _check_and_enable_flash_attn_2
+    raise ImportError(f"{preface} the package flash_attn seems to be not installed. {install_message}")
+ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package flash_attn seems to be not installed. Please refer to the documentation of https://huggingface.co/docs/transformers/perf_infer_gpu_one#flashattention-2 to install Flash Attention 2.
+[2024-11-20 09:57:53,238] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 5421) of binary: /root/miniconda3/bin/python
+Traceback (most recent call last):
+  File "/root/miniconda3/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/distributed/run.py", line 806, in main
+    run(args)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-11-20_09:57:53
+  host      : autodl-container-499541b7fe-5f1df067
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 5421)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
+11/20/2024 09:58:10 - WARNING - __main__ -   Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, 16-bits training: False
+11/20/2024 09:58:10 - INFO - __main__ -   Training/evaluation parameters RetrieverTrainingArguments(
+_n_gpu=1,
+accelerator_config={'split_batches': False, 'dispatch_batches': None, 'even_batches': True, 'use_seedable_sampler': True, 'non_blocking': False, 'gradient_accumulation_kwargs': None, 'use_configured_state': False},
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+batch_eval_metrics=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=True,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=False,
+do_predict=False,
+do_train=False,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=no,
+evaluation_strategy=None,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_v2': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+gradient_accumulation_steps=32,
+gradient_checkpointing=False,
+gradient_checkpointing_kwargs=None,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=0.0002,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=../../../../model_save/v3_round1_qlora_recall_top_100_for_rank_model/runs/Nov20_09-58-10_autodl-container-499541b7fe-5f1df067,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=1.0,
+logging_strategy=steps,
+loss_type=only logits,
+lr_scheduler_kwargs={},
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=2.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+output_dir=../../../../model_save/v3_round1_qlora_recall_top_100_for_rank_model,
+overwrite_output_dir=False,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=1,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=['tensorboard'],
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+run_name=../../../../model_save/v3_round1_qlora_recall_top_100_for_rank_model,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=500,
+save_strategy=steps,
+save_total_limit=None,
+seed=42,
+skip_memory_metrics=True,
+split_batches=None,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+11/20/2024 09:58:10 - INFO - __main__ -   Model parameters ModelArguments(model_name_or_path='/root/autodl-tmp/bert-models/upstage/SOLAR-10.7B-Instruct-v1.0', peft_model_path='', config_name=None, tokenizer_name=None, use_lora=True, lora_rank=64, lora_alpha=16, lora_dropout=0.1, target_modules=['q_proj', 'v_proj', 'o_proj', 'down_proj', 'up_proj', 'gate_proj'], save_merged_lora_model=False, use_flash_attn=True, use_slow_tokenizer=False, low_cpu_mem_usage=False, cache_dir='tmp', token=None, from_peft=None, lora_extra_parameters=None)
+11/20/2024 09:58:10 - INFO - __main__ -   Data parameters DataArguments(train_data='../../../../output/v3_round1_qlora_rank_top_50_train.jsonl', train_group_size=16, query_max_len=512, passage_max_len=512, max_example_num_per_dataset=100000000, query_instruction_for_retrieval='A: ', passage_instruction_for_retrieval='B: ', cache_path='./data_dir', load_from_disk=False, load_disk_path=None, save_to_disk=False, save_disk_path=None, num_shards=0, save_max_shard_size='50GB', exit_after_save=False)
+training_args.fp16 = False
+`low_cpu_mem_usage` was None, now set to True since model is quantized.
+The model was loaded with use_flash_attention_2=True, which is deprecated and may be removed in a future release. Please use `attn_implementation="flash_attention_2"` instead.
+Traceback (most recent call last):
+  File "/root/miniconda3/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/root/miniconda3/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/root/autodl-tmp/Eedi/01-SFR-Embedding-Mistral/FlagEmbedding-master/FlagEmbedding/llm_reranker/finetune_for_instruction/run.py", line 146, in <module>
+    main()
+  File "/root/autodl-tmp/Eedi/01-SFR-Embedding-Mistral/FlagEmbedding-master/FlagEmbedding/llm_reranker/finetune_for_instruction/run.py", line 60, in main
+    base_model = get_model(model_args, training_args)
+  File "/root/autodl-tmp/Eedi/01-SFR-Embedding-Mistral/FlagEmbedding-master/FlagEmbedding/llm_reranker/finetune_for_instruction/load_model.py", line 16, in get_model
+    model = AutoModelForCausalLM.from_pretrained(
+  File "/root/miniconda3/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 564, in from_pretrained
+    return model_class.from_pretrained(
+  File "/root/miniconda3/lib/python3.10/site-packages/transformers/modeling_utils.py", line 3704, in from_pretrained
+    config = cls._autoset_attn_implementation(
+  File "/root/miniconda3/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1481, in _autoset_attn_implementation
+    cls._check_and_enable_flash_attn_2(
+  File "/root/miniconda3/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1583, in _check_and_enable_flash_attn_2
+    raise ImportError(f"{preface} the package flash_attn seems to be not installed. {install_message}")
+ImportError: FlashAttention2 has been toggled on, but it cannot be used due to the following error: the package flash_attn seems to be not installed. Please refer to the documentation of https://huggingface.co/docs/transformers/perf_infer_gpu_one#flashattention-2 to install Flash Attention 2.
+[2024-11-20 09:58:12,359] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 0 (pid: 5476) of binary: /root/miniconda3/bin/python
+Traceback (most recent call last):
+  File "/root/miniconda3/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/distributed/run.py", line 806, in main
+    run(args)
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/root/miniconda3/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+run FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-11-20_09:58:12
+  host      : autodl-container-499541b7fe-5f1df067
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 5476)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
